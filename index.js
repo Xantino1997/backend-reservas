@@ -26,8 +26,8 @@ const urlencodedParser = bodyParser.urlencoded({
 });
 app.use(
   cors({
-    // origin: "https://centromocovi.vercel.app",
-    origin: "http://localhost:3000",
+    origin: "https://reservas-nine.vercel.app",
+    // origin: "http://localhost:3000",
     credentials: true,
   })
 );
