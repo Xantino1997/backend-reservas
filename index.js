@@ -26,7 +26,6 @@ const urlencodedParser = bodyParser.urlencoded({
 app.use(
   cors({
     origin: "https://reservas-nine.vercel.app",
-    // origin: "http://localhost:3000",
     credentials: true,
   })
 );
