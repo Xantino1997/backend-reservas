@@ -70,7 +70,6 @@ productosRouter.put("/products/:id", async (req, res) => {
   try {
     let updatedImageUrl = imagen; // Almacenar la URL de la imagen original
 
-    // Si hay una nueva imagen, subir la nueva imagen a Cloudinary y obtener la URL
     if (req.body.newImagen) {
       const uploadedImage = await cloudinary.uploader.upload(
         req.body.newImagen,
