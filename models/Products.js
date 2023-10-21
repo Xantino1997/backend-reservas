@@ -29,10 +29,7 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  numeroFactura: {
-    type: String,
-    required: true,
-  },
+  numeroFactura: { type: String, required: false },
 });
 
 const Product = mongoose.model("productos", productSchema);

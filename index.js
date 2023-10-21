@@ -6,14 +6,8 @@ const jwt = require("jsonwebtoken");
 const bodyParser = require("body-parser");
 const loginRouter = require("./routes/Login");
 const productosRouter = require("./routes/Productos");
-// const logoutRouter = require("./routes/logout");
-// const noticiasRouter = require("./routes/crearNoticias");
-// const postRouter = require("./routes/crearPost");
-// const saveImage = require("./routes/cloudinary");
-// const VideoRouter = require("./routes/VideoSubido");
-// const RecuperoRouter = require("./routes/recuperar");
-// const captchaRouter = require("./routes/captcha");
-// const changeRouter = require("./routes/changePass");
+const ventasRouter = require("./routes/Ventas");
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 const uri = process.env.DB_KEY;
@@ -26,6 +20,7 @@ const urlencodedParser = bodyParser.urlencoded({
 app.use(
   cors({
     origin: "https://reservas-nine.vercel.app",
+    // origin: "http://localhost:3000",
     credentials: true,
   })
 );
@@ -39,14 +34,7 @@ require("dotenv").config();
 app.use(express.json());
 app.use(loginRouter);
 app.use(productosRouter);
-// app.use(logoutRouter);
-// app.use(noticiasRouter);
-// app.use(postRouter);
-// app.use(saveImage);
-// app.use(VideoRouter);
-// app.use(RecuperoRouter);
-// app.use(captchaRouter);
-// app.use(changeRouter);
+app.use(ventasRouter);
 
 // Conexión a la base de datos MongoDB
 mongoose.connect(uri, {
